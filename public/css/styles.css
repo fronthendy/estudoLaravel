@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+
+html {
+    scroll-behavior: smooth;
+  }
+* {
+    box-sizing: border-box;
+    font-family: 'Indie Flower', cursive;
+}
+.container-fluid {
+    padding: 0 !important;
+}
+
+.list-group-item {
+    padding: 1.35rem 0.10rem !important;
+}
+
+a.nav-link {
+    color: white !important;
+}
+
+.bg-eigen {
+    background-color: #16161d !important;
+}
+a.nav-link{
+    padding:21px 15px !important;
+    border-bottom:0.7px solid #16161d;
+}
+a.nav-link:hover{
+    border-bottom:0.7px solid white;
+    transition: 0.9s;
+}
+.navbar{
+    padding: 0 !important;
+}
+
+.second{
+        padding-top: 100px !important;
+}
+.new-products{
+        padding-top: 80px !important;
+}
+
+.carousel-item {
+    height: 100vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+section.second {
+    background-color: white !important;
+    height: 100vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+p.lead{
+    font-family: 'Roboto', sans-serif !important;
+}
+section.new-products {
+    background-color: white !important;
+    height: 100vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.btn-primary{
+    background-color:gray !important;
+    border-color: gray !important;
+}
+.btn-primary:hover{
+    background-color:#16161d !important;
+    border-color: #16161d !important;
+    transition: 2s;
+}
+
