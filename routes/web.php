@@ -20,11 +20,12 @@
 //     return $n1 + $n2;
 // });
 
-Route::get('/', 'HomeController@index');
+Route::get('/home', 'HomeController@index');
 
 Route::get('/produtos', 'ProdutosController@listarProdutos');
 
 Route::get('/produtos/{id}', 'ProdutosController@detalheProduto');
+
 Route::get('/produtos/categoria/{id}', 'ProdutosController@filtroCategoria');
 
 Route::get('/produtos/categoria/{id}', 'ProdutosController@filtrarCategoria');
