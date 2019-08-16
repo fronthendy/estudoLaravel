@@ -24,4 +24,6 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/produtos', 'ProdutosController@listarProdutos');
 
+Route::get('/produtos/{id}', 'ProdutosController@detalheProduto');
+
 

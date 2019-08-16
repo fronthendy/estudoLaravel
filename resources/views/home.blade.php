@@ -39,7 +39,7 @@
                         <ul class="list-group list-group-flush text-center">
                             <li class="list-group-item"><strong>R$ {{ $produto['preco'] }}</strong></li>
                         </ul>
-                        <a href="#" class="d-flex btn btn-primary my-3 justify-content-center comprar">Comprar</a>
+                        <a href="/produtos/{{ $produto['id_produto'] }}" class="d-flex btn btn-primary my-3 justify-content-center comprar">Comprar</a>
                     </div>
                 </div>
             </div>
