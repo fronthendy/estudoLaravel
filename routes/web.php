@@ -11,16 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // home/Hendy
 // Route::get('/home/{n1}/{n2}', function ($n1, $n2){
 //     return $n1 + $n2;
 // });
 
-Route::get('/home', 'HomeController@index');
+Route::get('/', 'HomeController@index');
 
 Route::get('/produtos', 'ProdutosController@listarProdutos');
 

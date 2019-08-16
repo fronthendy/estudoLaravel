@@ -7,8 +7,33 @@ html {
   }
 * {
     box-sizing: border-box;
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Lexend Deca', sans-serif;
 }
+
+ul.categorias{
+    list-style: none;
+    padding-left: 0;
+}
+ul.categorias li {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+}
+
+.alert p{
+    margin: 0;
+}
+
+.card-img-top{
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto;
+}
+/* 
+
+.container {
+    width: 900px;
+    max-width: 100%;
+} */
 .container-fluid {
     padding: 0 !important;
 }
@@ -31,6 +56,19 @@ a.nav-link{
 a.nav-link:hover{
     border-bottom:0.7px solid white;
     transition: 0.9s;
+}
+
+
+img.card-img-top{
+    height: 350px;
+    width: auto;
+}
+
+h5.card-title.text-center{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
 }
 .navbar{
     padding: 0 !important;
@@ -94,3 +132,6 @@ section.new-products {
     transition: 2s;
 }
 
+.pagination{
+    justify-content: center;
+}
