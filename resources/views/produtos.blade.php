@@ -10,16 +10,19 @@
                 <h2>categorias</h2>
 
                 <ul class="categorias">
-                    <li><a href="/produtos/categoria/0">categoria 1</a></li>
-                    <li>categoria 2</li>
-                    <li>categoria 3</li>
+                    <li><a href="/produtos">Todos os produtos</a></li>
+                    @if(isset($categorias))
+                        @foreach($categorias as $categoria)
+                            <li><a href="/produtos/categoria/{{ $categoria->id_categoria }}">{{ $categoria->nome }}</a></li>
+                        @endforeach
+                    @endif
                 </ul>
             </div>
             <div class="col-sm-8">
-                <h1>Todos os produtos</h1>
+                <h1>{{ isset($nomeCategoria) ? $nomeCategoria : 'Todos os produtos' }}</h1>
 
                 <div class="row">
-                    @if(isset($produtos))
+                    @if(isset($produtos) && count($produtos) > 0)
 
                     @foreach($produtos as $produto)
                     <div class="livro col-sm-12 col-lg-4 my-4">
@@ -39,7 +42,7 @@
                     @else
 
                     <div class="col text-center">
-                        <h2>Nenhum produto para exibir</h2>
+                        <span class="alert alert-info">Nenhum produto para exibir</span>
                     </div>
 
                     @endif
