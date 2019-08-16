@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Inicio')
+@section('title', 'Livro')
 
 @section('content')
 <section id="produtos" class="new-products mt-5">
