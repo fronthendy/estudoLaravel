@@ -117,7 +117,7 @@
                                 <a href="/produtos/{{$produto->id_produto}}">{{$produto->nome}}</a>
                             </td>
                             <td>
-                                <a href="/produtos/{{$produto->id_produto}}">{{$produto->fk_categoria}}</a>
+                                <a href="/produtos/categoria/{{$produto->categoria->id_categoria}}">{{$produto->categoria->nome}}</a>
                             </td>
                         </tr>
                         @endforeach
