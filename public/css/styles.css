@@ -62,6 +62,7 @@ a.nav-link:hover{
 img.card-img-top{
     height: 350px;
     width: auto;
+    margin: 0 auto;
 }
 
 h5.card-title.text-center{

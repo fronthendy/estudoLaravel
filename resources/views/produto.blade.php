@@ -6,7 +6,7 @@
 <section id="produtos" class="new-products mt-5">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 my-4 col">
+            <div class="col-md-6 my-4 col text-center">
                 <img class="card-img-top" src="{{ $produto->imagem}}" alt="Card image cap">
             </div>
             <div class="col-md-6 col">

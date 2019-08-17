@@ -3,13 +3,29 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Produto; //add model Produto
+use App\Produto;
 
 class HomeController extends Controller
 {
-    public function index(){
-        $produtos = Produto::all()->take(3); //listar 3 produtos
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
-        return view('home')->with('produtos', $produtos);
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
+        $produtos = Produto::all()->take(3);
+
+        return view('home', compact('produtos'));
     }
 }

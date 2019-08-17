@@ -28,4 +28,10 @@ Route::get('/produtos/{id}', 'ProdutosController@detalheProduto');
 
 Route::get('/produtos/categoria/{id}', 'ProdutosController@filtrarCategoria');
 
+Route::get('/admin', 'AdminController@index');
 
+
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
