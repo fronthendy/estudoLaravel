@@ -39,6 +39,9 @@
                     </div>
                     @endforeach
 
+                    <div class="col-lg-12">
+                        {{ $produtos->links() }}
+                    </div>
                     @else
 
                     <div class="col text-center">
