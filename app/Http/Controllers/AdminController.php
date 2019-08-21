@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Produto;
 use App\Categoria;
+use App\Editora;
 
 class AdminController extends Controller
 {
@@ -20,5 +21,87 @@ class AdminController extends Controller
         $categorias = Categoria::all();
 
         return view('admin', compact('produtos', 'categorias'));
+    }
+
+    public function criarProduto(){
+        $categorias = Categoria::all();
+        $editoras = Editora::all();
+        return view('criarProduto', compact('categorias', 'editoras'));
+    }
+
+    public function insertProduto(Request $request){
+        $produto = new Produto;
+
+        $produto->nome = $request->nome;
+        $produto->preco = $request->preco;
+        $produto->descricao = $request->descricao;
+        $produto->fk_categoria = $request->categoria;
+        $produto->fk_editora = $request->editora;
+
+        $arquivo = $request->file('imagem');
+        if (!empty($arquivo)) {
+            // salvando
+            $nomePasta = 'uploads';
+            $arquivo->storePublicly($nomePasta);
+            $caminhoAbsoluto = public_path()."/storage/$nomePasta";
+            $nomeArquivo = $arquivo->getClientOriginalName();
+            $caminhoRelativo = "/storage/$nomePasta/$nomeArquivo";
+            // movendo
+            $arquivo->move($caminhoAbsoluto, $nomeArquivo);
+            $produto->imagem = $caminhoRelativo;
+        }
+
+        $produto->save();
+
+        return redirect('/admin')->with('mensagem', 'Produto cadastrado com sucesso');
+    }
+
+    public function editarProduto($id){
+        $produto = Produto::find($id);
+        $categorias = Categoria::all();
+        $editoras = Editora::all();
+
+        return view('editarProduto', compact('produto', 'categorias', 'editoras'));
+    }
+
+    public function updateProduto(Request $request, $id){
+        $produto = Produto::find($id);
+
+        $produto->nome = $request->nome;
+        $produto->preco = $request->preco;
+        $produto->descricao = $request->descricao;
+        $produto->fk_categoria = $request->categoria;
+        $produto->fk_editora = $request->editora;
+
+        $arquivo = $request->file('imagem');
+        if (!empty($arquivo)) {
+            // salvando
+            $nomePasta = 'uploads';
+            $arquivo->storePublicly($nomePasta);
+            $caminhoAbsoluto = public_path()."/storage/$nomePasta";
+            $nomeArquivo = $arquivo->getClientOriginalName();
+            $caminhoRelativo = "/storage/$nomePasta/$nomeArquivo";
+            // movendo
+            $arquivo->move($caminhoAbsoluto, $nomeArquivo);
+            $produto->imagem = $caminhoRelativo;
+        }
+
+        $produto->save();
+
+        return redirect('/admin')->with('mensagem', 'Produto alterado com sucesso');
+    }
+
+    public function excluirProduto($id){
+        $produto = Produto::find($id);
+
+        return view('deletarProduto', compact('produto'));
+    }
+
+    public function deleteProduto($id){
+        $produto = Produto::find($id);
+
+        $produto->delete();
+        return redirect('/admin')->with('mensagem', 'Produto excluido com sucesso');
+
     }
 }
