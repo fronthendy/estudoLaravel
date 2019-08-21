@@ -30,6 +30,10 @@ Route::get('/produtos/categoria/{id}', 'ProdutosController@filtrarCategoria');
 
 Route::get('/admin', 'AdminController@index');
 
+Route::get('/admin/produtos/novo', 'AdminController@criarProduto');
+Route::post('/admin/produtos/novo', 'AdminController@insertProduto');
+
+Route::get('/admin/produtos/{id}', 'AdminController@editarProduto');
 
 
 Route::get('/home', 'HomeController@index')->name('home');

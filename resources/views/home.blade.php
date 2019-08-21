@@ -56,7 +56,7 @@
         <img src="Images/banner3.jpg" class="img-full" alt="">
     </div>
 </section>
-<section id="story" class="second mt-5">
+<section id="story" class="second mt-5 mb-5">
     <div class="container text-center">
         <div class="row">
             <div class="col-sm">
@@ -71,8 +71,7 @@
             <div class="clearfix"></div>
         </div>
         <div class="row">
-            <div class="col-sm">
-                <h1 class="display-4 text-center title-story">Our story</h1>
+            <div class="col-sm mt-5">
                 <p class="lead">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada enim in dolor sagittis,
                     et pulvinar velit lobortis. Phasellus sed ante vel elit convallis sodales at sit amet leo. Sed a
