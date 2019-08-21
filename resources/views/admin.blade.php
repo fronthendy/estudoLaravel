@@ -15,39 +15,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col mb-5">
-                <h1>Painel Administrativo</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 mb-5">
-                <h2>Categorias
-                <a href="/admin/categorias/novo" class="btn btn-primary mb-2">Nova categoria</a>
-                </h2>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <td>id</td>
-                            <td>nome</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @if($categorias)
-                        @foreach($categorias as $categoria)
-                        <tr>
-                            <td>
-                                <a href="/produtos/categoria/{{$categoria->id_categoria}}">{{$categoria->nome}}</a>
-                            </td>
-                            <td>
-                                <a href="/produtos/categoria/{{$categoria->id_categoria}}">{{$categoria->nome}}</a>
-                            </td>
-                        </tr>
-                        @endforeach
-                        @endif
-                    </tbody>
-                </table>
-
-            </div>
+            
             <div class="col">
                 <h2>Produtos
                 <a href="/admin/produtos/novo" class="btn btn-primary mb-2">Novo produto</a>
