@@ -39,18 +39,18 @@ class AdminController extends Controller
         $produto->fk_editora = $request->editora;
         $produto->preco = $request->preco;
 
-        // $arquivo = $request->file('imagem');
-        // if (!empty($arquivo)) {
-        //     // salvando
-        //     $nomePasta = 'uploads';
-        //     $arquivo->storePublicly($nomePasta);
-        //     $caminhoAbsoluto = public_path()."/storage/$nomePasta";
-        //     $nomeArquivo = $arquivo->getClientOriginalName();
-        //     $caminhoRelativo = "/storage/$nomePasta/$nomeArquivo";
-        //     // movendo
-        //     $arquivo->move($caminhoAbsoluto, $nomeArquivo);
-        //     $produto->imagem = $caminhoRelativo;
-        // }
+        $arquivo = $request->file('imagem');
+        if (!empty($arquivo)) {
+            // salvando
+            $nomePasta = 'uploads';
+            $arquivo->storePublicly($nomePasta);
+            $caminhoAbsoluto = public_path()."/storage/$nomePasta";
+            $nomeArquivo = $arquivo->getClientOriginalName();
+            $caminhoRelativo = "/storage/$nomePasta/$nomeArquivo";
+            // movendo
+            $arquivo->move($caminhoAbsoluto, $nomeArquivo);
+            $produto->imagem = $caminhoRelativo;
+        }
 
         $produto->save();
 
@@ -65,5 +65,36 @@ class AdminController extends Controller
         $editoras = Editora::all();
 
         return view('editarProduto', compact('produto', 'categorias', 'editoras'));
+    }
+
+    public function updateProduto(Request $request, $id){
+        $produto = Produto::find($id);
+
+        $produto->nome = $request->nome;
+        $produto->descricao = $request->descricao;
+        $produto->fk_categoria = $request->categoria;
+        $produto->fk_editora = $request->editora;
+        $produto->preco = $request->preco;
+
+        $arquivo = $request->file('imagem');
+        if (!empty($arquivo)) {
+            // salvando
+            $nomePasta = 'uploads';
+            $arquivo->storePublicly($nomePasta);
+            $caminhoAbsoluto = public_path()."/storage/$nomePasta";
+            $nomeArquivo = $arquivo->getClientOriginalName();
+            $caminhoRelativo = "/storage/$nomePasta/$nomeArquivo";
+            // movendo
+            $arquivo->move($caminhoAbsoluto, $nomeArquivo);
+            $produto->imagem = $caminhoRelativo;
+        }
+
+        $produto->save();
+
+        return redirect('/admin');
+    }
+
+    public function excluirProduto($id){
+        $produto = Produto::find($id);
     }
 }
