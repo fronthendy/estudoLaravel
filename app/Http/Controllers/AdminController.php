@@ -54,7 +54,7 @@ class AdminController extends Controller
 
         $produto->save();
 
-        return redirect('/admin');
+        return redirect('/admin')->with('mensagem', 'Produto criado com sucesso');
 
     }
 
@@ -91,10 +91,20 @@ class AdminController extends Controller
 
         $produto->save();
 
-        return redirect('/admin');
+        return redirect('/admin')->with('mensagem', 'Produto alterado com sucesso');
     }
 
     public function excluirProduto($id){
         $produto = Produto::find($id);
+
+        return view('deletarProduto', compact('produto'));
+    }
+
+    public function deleteProduto($id){
+        $produto = Produto::find($id);
+        $nomeProduto = $produto->nome;
+        $produto->delete();
+
+        return redirect('/admin')->with('mensagem', $nomeProduto .' excluido com sucesso');
     }
 }
