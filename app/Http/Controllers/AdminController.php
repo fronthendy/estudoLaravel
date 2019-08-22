@@ -39,6 +39,18 @@ class AdminController extends Controller
         $produto->fk_editora = $request->editora;
         $produto->preco = $request->preco;
 
+        // $arquivo = $request->file('imagem');
+        // if (!empty($arquivo)) {
+        //     // salvando
+        //     $nomePasta = 'uploads';
+        //     $arquivo->storePublicly($nomePasta);
+        //     $caminhoAbsoluto = public_path()."/storage/$nomePasta";
+        //     $nomeArquivo = $arquivo->getClientOriginalName();
+        //     $caminhoRelativo = "/storage/$nomePasta/$nomeArquivo";
+        //     // movendo
+        //     $arquivo->move($caminhoAbsoluto, $nomeArquivo);
+        //     $produto->imagem = $caminhoRelativo;
+        // }
 
         $produto->save();
 

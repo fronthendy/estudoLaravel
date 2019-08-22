@@ -34,6 +34,7 @@ Route::get('/admin/produtos/novo', 'AdminController@criarProduto');
 Route::post('/admin/produtos/novo', 'AdminController@insertProduto');
 
 Route::get('/admin/produtos/{id}', 'AdminController@editarProduto');
+Route::post('/admin/produtos/{id}', 'AdminController@updateProduto');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
