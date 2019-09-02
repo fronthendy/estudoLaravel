@@ -12,7 +12,7 @@
                 <small>Insira as informações no formulário abaixo</small>
             </div>
 
-            <form action="/admin/produtos/{{$produto->id_produto}}" enctype="multipart/form-data" method="POST" class="col-md-6 mt-5">
+            <form action="/admin/produtos/{{$produto->id}}" enctype="multipart/form-data" method="POST" class="col-md-6 mt-5">
                 {{csrf_field()}}
                 <div class="form-group">
                     <label for="nome">nome</label>
@@ -25,7 +25,7 @@
 
                         @if(isset($categorias))
                         @foreach($categorias as $categoria)
-                        <option value="{{ $categoria->id_categoria }}" {{($categoria->id_categoria == $produto->fk_categoria) ? 'selected' : ''}}> {{ $categoria->nome }}</option>
+                        <option value="{{ $categoria->id }}" {{($categoria->id == $produto->fk_categoria) ? 'selected' : ''}}> {{ $categoria->nome }}</option>
                         @endforeach
                         @endif
                     </select>
@@ -37,7 +37,7 @@
 
                         @if(isset($editoras))
                         @foreach($editoras as $editora)
-                        <option value="{{ $editora->id_editora }}" {{($editora->id_editora == $produto->fk_editora) ? 'selected' : ''}}>{{ $editora->nome }}</option>
+                        <option value="{{ $editora->id }}" {{($editora->id == $produto->fk_editora) ? 'selected' : ''}}>{{ $editora->nome }}</option>
                         @endforeach
                         @endif
                     </select>

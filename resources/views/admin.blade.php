@@ -34,17 +34,17 @@
                         @foreach($produtos as $produto)
                         <tr>
                             <td>
-                                <a href="/admin/produtos/{{$produto->id_produto}}">{{$produto->id_produto}}</a>
+                                <a href="/admin/produtos/{{$produto->id}}">{{$produto->id}}</a>
                             </td>
                             <td>
-                                <a href="/admin/produtos/{{$produto->id_produto}}">{{$produto->nome}}</a>
+                                <a href="/admin/produtos/{{$produto->id}}">{{$produto->nome}}</a>
                             </td>
                             <td>
-                                <a href="/admin/produtos/{{$produto->id_produto}}">{{$produto->categoria->nome}}</a>
+                                <a href="/admin/produtos/{{$produto->id}}">{{$produto->categoria->nome}}</a>
                             </td>
                             <td>
-                                <a href="/admin/produtos/{{ $produto->id_produto }}" class="btn btn-secondary">editar</a>
-                                <a href="/admin/produtos/excluir/{{ $produto->id_produto }}" class="btn btn-danger">excluir</a>
+                                <a href="/admin/produtos/{{ $produto->id }}" class="btn btn-secondary">editar</a>
+                                <a href="/admin/produtos/excluir/{{ $produto->id }}" class="btn btn-danger">excluir</a>
                             </td>
                         </tr>
                         @endforeach

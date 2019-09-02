@@ -24,8 +24,10 @@ ul.categorias li {
 }
 
 .card-img-top{
-    width: auto;
-    max-width: 100%;
+    width: 100%;
+    height: 300px;
+    background-position: center;
+    background-size: cover;
     margin: 0 auto;
 }
 /* 

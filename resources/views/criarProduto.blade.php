@@ -23,7 +23,7 @@
 
                             @if(isset($categorias))
                             @foreach($categorias as $categoria)
-                                <option value="{{ $categoria->id_categoria }}">{{ $categoria->nome }}</option>
+                                <option value="{{ $categoria->id }}">{{ $categoria->nome }}</option>
                             @endforeach
                             @endif
                         </select>
@@ -35,7 +35,7 @@
 
                             @if(isset($editoras))
                             @foreach($editoras as $editora)
-                                <option value="{{ $editora->id_editora }}">{{ $editora->nome }}</option>
+                                <option value="{{ $editora->id }}">{{ $editora->nome }}</option>
                             @endforeach
                             @endif
                         </select>
