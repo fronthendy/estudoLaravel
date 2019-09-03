@@ -5,26 +5,25 @@ namespace App\Http\Controllers\api;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Produto;
+use App\Review;
 
 class ProdutosController extends Controller
 {
-    function exibirTodos()
-    { 
+    public function exibirTodos()
+    {
         $produtos = Produto::all();
 
         return response()->json($produtos);
     }
 
-    function detalhesProduto($id)
+    public function detalhesProduto($id)
     { 
         $produto = Produto::find($id);
 
         return response()->json($produto);
-
-        
     }
 
-    function criarProduto(Request $request)
+    public function criarProduto(Request $request)
     { 
         $produto = new Produto();
 
@@ -40,7 +39,7 @@ class ProdutosController extends Controller
         return response()->json(['mensagem' => 'produto criado com sucesso']);
     }
 
-    function editarProduto(Request $request, $id)
+    public function editarProduto(Request $request, $id)
     { 
         $produto = Produto::find($id);
 
@@ -55,11 +54,23 @@ class ProdutosController extends Controller
 
     }
 
-    function deletarProduto($id)
+    public function deletarProduto($id)
     { 
         $produto = Produto::find($id);
         $produto->delete();
         return response()->json(['mensagem' => 'produto deletado com sucesso']);
 
+    }
+
+    public function criarReview(Request $request, $id)
+    {
+        $review = new Review();
+        $review->leitor = $request->leitor;
+        $review->nota = $request->nota;
+        $review->comentario = $request->comentario;
+        $review->fk_produto = $id;
+        $review->save();
+
+        return response()->json(['mensagem' => 'review enviada com sucesso']);
     }
 }

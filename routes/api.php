@@ -23,3 +23,4 @@ Route::get('produtos/{id}', 'api\ProdutosController@detalhesProduto');
 Route::post('produtos', 'api\ProdutosController@criarProduto');
 Route::put('produtos/{id}', 'api\ProdutosController@editarProduto');
 Route::delete('produtos/{id}', 'api\ProdutosController@deletarProduto');
+Route::post('produtos/review/{id}', 'api\ProdutosController@criarReview');

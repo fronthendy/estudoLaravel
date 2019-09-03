@@ -14,6 +14,7 @@
                     <h1>{{ $produto->nome }}</h1>
                     <p>{{ $produto->descricao }}</p>
                     <p class="badge badge-secondary">{{ $produto->categoria->nome }}</p>
+                    <p>{{ $produto->mediaNota() }}</p>
                     <p >Autor: {{ $produto->autor->nome . ' ' . $produto->autor->sobrenome }}</p>
                     <ul class="list-group list-group-flush text-center">
                         <li class="list-group-item"><strong>R$ {{ $produto->preco }}</strong></li>
