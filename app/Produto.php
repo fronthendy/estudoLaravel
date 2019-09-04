@@ -35,6 +35,6 @@ class Produto extends Model
 
     public function mediaNota()
     {
-        return round($this->reviews()->avg('nota'))?: 0;
+        return round($this->reviews()->avg('nota')) ?: 0;
     }
 }
