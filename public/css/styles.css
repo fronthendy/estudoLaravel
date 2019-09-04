@@ -136,3 +136,71 @@ section.new-products {
 .pagination{
     justify-content: center;
 }
+
+
+
+
+
+
+/* LABEL */
+.label-float{
+    position: relative;
+    padding-top: 13px;
+  }
+  
+  .label-float input{
+    border: 0;
+    border-bottom: 2px solid lightgrey;
+    outline: none;
+    min-width: 380px;
+    font-size: 16px;
+    transition: all .3s ease-out;
+    -webkit-transition: all 0.4s ease-out;
+    -moz-transition: all 0.4s ease-out;
+    -webkit-appearance:none;
+    border-radius:0;
+  }
+  
+  .label-float input:focus{
+    border-bottom: 2px solid #3951b2;
+  }
+  
+  .label-float input::placeholder{
+    color:transparent;
+  }
+  
+  .label-float label{
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 20px;
+    transition: all .3s ease-out;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+  }
+  
+  .label-float input:required:invalid + label{
+    color: gray;
+  }
+  .label-float input:focus:required:invalid{
+    border-bottom: 2px solid #212529;
+  }
+
+  .label-float input:focus + label,
+  .label-float input:not(:placeholder-shown) + label{
+    font-size: 16px;
+    margin-top: 0;
+    color: #3951b2;
+  }
+  .col-form-label{
+      line-height: 0.1;
+  }
+  div.label-float{
+    margin: 0 auto;
+  }
+
+  .btn-link{
+      color:#212529;
+  }
+  
