@@ -11,7 +11,7 @@
                 <h1>Excluir {{$produto->nome}}?</h1>
             </div>
 
-            <form action="/admin/produtos/excluir/{{$produto->id_produto}}" enctype="multipart/form-data" method="POST" class="col-md-6 mt-1">
+            <form action="/admin/produtos/excluir/{{$produto->id}}" enctype="multipart/form-data" method="POST" class="col-md-6 mt-1">
                 {{csrf_field()}}
                 <div class="form-group">
                     <input readonly disabled type="text" name="nome" id="nome" class="form-control" value="{{ $produto->nome }}">

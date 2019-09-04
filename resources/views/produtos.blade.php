@@ -13,7 +13,7 @@
                     <li><a href="/produtos">Todos os produtos</a></li>
                     @if(isset($categorias))
                         @foreach($categorias as $categoria)
-                            <li><a href="/produtos/categoria/{{ $categoria->id_categoria }}">{{ $categoria->nome }}</a></li>
+                            <li><a href="/produtos/categoria/{{ $categoria->id }}">{{ $categoria->nome }}</a></li>
                         @endforeach
                     @endif
                 </ul>
@@ -27,13 +27,13 @@
                     @foreach($produtos as $produto)
                     <div class="livro col-sm-12 col-lg-4 my-4">
                         <div class="card">
-                            <img class="card-img-top" src="{{ $produto['imagem'] }}" width="320px" height="400px" alt="Card image cap">
+                            <div class="card-img-top" style="background-image:url({{ $produto['imagem'] }})"  title="Card image cap"></div>
                             <div class="card-body">
                                 <h5 class="card-title text-center">{{ $produto['nome'] }}</h5>
                                 <ul class="list-group list-group-flush text-center">
                                     <li class="list-group-item"><strong>R$ {{ $produto['preco'] }}</strong></li>
                                 </ul>
-                                <a href="/produtos/{{ $produto->id_produto }}" class="d-flex btn btn-primary my-3 justify-content-center comprar">Comprar</a>
+                                <a href="/produtos/{{ $produto->id }}" class="d-flex btn btn-primary my-3 justify-content-center comprar">Comprar</a>
                             </div>
                         </div>
                     </div>
