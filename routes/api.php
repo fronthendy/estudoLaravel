@@ -26,3 +26,9 @@ Route::post('produtos',  array('middleware' => 'cors', 'uses' => 'api\ProdutosCo
 Route::put('produtos/{id}',  array('middleware' => 'cors', 'uses' => 'api\ProdutosController@editarProduto'));
 Route::delete('produtos/{id}',  array('middleware' => 'cors', 'uses' => 'api\ProdutosController@deletarProduto'));
 Route::post('produtos/review/{id}',  array('middleware' => 'cors', 'uses' => 'api\ProdutosController@criarReview'));
+
+
+// GET  - trazer informações
+// POST - inserir novo registro
+// PUT - editar registro existente
+// DELETE - apagar registro
