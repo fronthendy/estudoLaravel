@@ -54,10 +54,10 @@
             "@php artisan migrate:refresh --force",
             "@php artisan package:discover",
             "@php artisan storage:link",
-            "@php artisan config:clear",
             "@php artisan cache:clear",
             "@php artisan config:cache",
-            "chmod -R 777 storage/"
+            "chmod -R 777 storage/",
+            "@php artisan optimize"
 
 
         ],
