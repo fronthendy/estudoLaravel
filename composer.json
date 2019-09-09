@@ -57,8 +57,7 @@
             "@php artisan config:clear",
             "@php artisan cache:clear",
             "@php artisan config:cache",
-            "chmod -R 777 storage/",
-            "composer dump-autoload"
+            "chmod -R 777 storage/"
 
 
         ],
